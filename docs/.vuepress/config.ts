@@ -1,28 +1,28 @@
-// 你的插件或主题入口
 import { defaultTheme } from 'vuepress';
-import { commentPlugin } from "vuepress-plugin-comment2";
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { copyCodePlugin } from "vuepress-plugin-copy-code2";
-import { seoPlugin } from "vuepress-plugin-seo2";
-import { pwaPlugin } from "vuepress-plugin-pwa2";
-import { feedPlugin } from "vuepress-plugin-feed2";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension';
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { componentsPlugin } from "vuepress-plugin-components";
 
 export default ({
   lang: 'zh-CN',
   title: '你好， VuePress ！',
   description: '这是我的第一个 VuePress 站点',
-  base: 'vuepress-test',
+  head: [['link', { rel: 'icon', href: 'https://s2.loli.net/2023/03/25/5mi3T6gKcP2jNId.png' }]],
+  base: '/vuepress-test/',
   shouldPrefetch: false,
   theme: defaultTheme({
     logo: 'https://s2.loli.net/2023/03/25/4LMZ37GRciPr8ha.png',
     repo: 'shanyan-wcx/vuepress-test',
     backToHome: '返回首页',
     notFound: ['页面不存在'],
+    lastUpdatedText: '最近更新',
+    editLink: false,
+    contributors: false,
     navbar: [
-      // NavbarGroup
       {
         text: '起始页面',
         children: [
@@ -67,31 +67,55 @@ export default ({
   }),
   plugins: [
     backToTopPlugin(),
+    removeHtmlExtensionPlugin(),
+    mdEnhancePlugin({
+      tabs: true,
+      codetabs: true,
+      align: true,
+      sup: true,
+      sub: true,
+      footnote: true,
+      mark: true,
+      figure: true,
+      imgLazyload: true,
+      imgMark: true,
+      imgSize: true,
+      obsidianImgSize: true,
+      tasklist: {
+        disabled: false,
+        label: true,
+      },
+      chart: true,
+      echarts: true,
+      flowchart: true,
+      mermaid: true,
+    }),
+    componentsPlugin({
+      components: [
+        "ArtPlayer",
+        "AudioPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "FontIcon",
+        "PDF",
+        "Replit",
+        "Share",
+        "StackBlitz",
+        "SiteInfo",
+        "VideoPlayer",
+        "XiGua",
+        "YouTube",
+      ],
+    }),
     mediumZoomPlugin({
-      // 配置项
-    }),
-    commentPlugin({
-      // 插件选项
-    }),
-    sitemapPlugin({
-      hostname: "vuepress.shanyan.online",
     }),
     copyCodePlugin({
       locales: {
         "/": {
-          // 覆盖复制按钮标签文字
           copy: "复制",
         },
       }
-    }),
-    seoPlugin({
-      hostname: "vuepress.shanyan.online",
-    }),
-    pwaPlugin({
-      // 你的选项
-    }),
-    feedPlugin({
-      hostname: "vuepress.shanyan.online",
     }),
     searchProPlugin({
       indexContent: true,
