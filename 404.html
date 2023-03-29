@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.61">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="https://s2.loli.net/2023/03/25/5mi3T6gKcP2jNId.png"><title>你好， VuePress ！</title><meta name="description" content="这是我的第一个 VuePress 站点">
+    <link rel="preload" href="/vuepress-template/assets/style-72905e25.css" as="style"><link rel="stylesheet" href="/vuepress-template/assets/style-72905e25.css">
+    <link rel="modulepreload" href="/vuepress-template/assets/app-9926cdde.js"><link rel="modulepreload" href="/vuepress-template/assets/framework-04a79e2c.js"><link rel="modulepreload" href="/vuepress-template/assets/404.html-7c9b3131.js"><link rel="modulepreload" href="/vuepress-template/assets/404.html-e7f61752.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>页面不存在</blockquote><a href="/vuepress-template/" class="">返回首页</a></div></main></div><!----><!----><!--]--></div>
+    <script type="module" src="/vuepress-template/assets/app-9926cdde.js" defer></script>
+  </body>
+</html>

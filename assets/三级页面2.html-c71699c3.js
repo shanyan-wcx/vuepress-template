@@ -1,0 +1,1 @@
+import{_ as t,p as _,q as a,R as e,t as s}from"./framework-04a79e2c.js";const c={},o=e("h1",{id:"三级页面2",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#三级页面2","aria-hidden":"true"},"#"),s(" 三级页面2")],-1),n=e("p",null,"这是三级页面2",-1),r=[o,n];function d(i,l){return _(),a("div",null,r)}const f=t(c,[["render",d],["__file","三级页面2.html.vue"]]);export{f as default};
