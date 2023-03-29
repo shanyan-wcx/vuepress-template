@@ -12,11 +12,11 @@ export default ({
   title: '你好， VuePress ！',
   description: '这是我的第一个 VuePress 站点',
   head: [['link', { rel: 'icon', href: 'https://s2.loli.net/2023/03/25/5mi3T6gKcP2jNId.png' }]],
-  base: '/vuepress-test/',
+  base: '/vuepress-template/',
   shouldPrefetch: false,
   theme: defaultTheme({
     logo: 'https://s2.loli.net/2023/03/25/4LMZ37GRciPr8ha.png',
-    repo: 'shanyan-wcx/vuepress-test',
+    repo: 'shanyan-wcx/vuepress-template',
     backToHome: '返回首页',
     notFound: ['页面不存在'],
     lastUpdatedText: '最近更新',
